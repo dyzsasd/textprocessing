@@ -1,9 +1,12 @@
 package fr.multiposting.smarttags.textprocessing
 
-import fr.multiposting.smarttags.textprocessing.pipe.SolrConnection
-import fr.multiposting.smarttags.textprocessing.pipe.Pipe.system
+import fr.multiposting.smarttags.textprocessing.pipe.SolrDocumentSource
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.duration._
+import scala.util.{Failure, Success}
+
 
 object Test extends App {
-  import system.dispatcher
-  SolrConnection.getMoreDocs(10, 5)
+  val raw = SolrDocumentSource.getMoreDocs(21, 56).map(println)
+  while(!raw.isCompleted) {}
 }

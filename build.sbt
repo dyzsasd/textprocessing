@@ -14,7 +14,13 @@ libraryDependencies  ++= {
 
     "io.spray" %% "spray-client" % "1.3.3",
 
-    "com.typesafe.play" % "play-json_2.11" % "2.4.1"
+    "com.typesafe.play" % "play-json_2.11" % "2.4.1",
+
+    "org.apache.solr" % "solr-solrj" % "5.2.1",
+
+    "org.slf4j" % "slf4j-simple" % "1.6.4",
+
+    "commons-logging" % "commons-logging" % "1.2"
 
   )
 }
